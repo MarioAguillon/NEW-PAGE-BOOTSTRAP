@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Pixel Studio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+    
+    <style>
+        /* Estilos base uniformes */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d1117;
+            color: #e4e4e4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR (Mismos estilos) */
+        .navbar {
+            background: linear-gradient(90deg, #0d1117, #1e293b);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .navbar-brand {
+            color: #00e5ff !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+        }
+
+        .nav-link {
+            color: #f0f0f0 !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #00bcd4 !important;
+            text-shadow: 0 0 10px rgba(0,188,212,0.5);
+        }
+
+        /* Gradiente */
+        .text-gradient {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* SECCIÓN PORTAFOLIO */
+        .portfolio-section {
+            padding: 80px 0;
+            flex-grow: 1; 
+        }
+
+        .portfolio-section h1 {
+            color: #00e5ff;
+        }
+
+        /* Tarjeta de Proyecto clonada de index.html */
+        .project-card-container .card {
+            background-color: #1e293b; /* Color de fondo de la tarjeta */
+            border: none;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card-container .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2); /* Sombra neón al pasar el mouse */
+        }
+        
+        .project-card-container .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card-container .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            /* Placeholder en caso de que la imagen no exista */
+            background-color: #2b394d;
+        }
+        
+        /* Botón de Caso */
+        .btn-case {
+            background-color: #00e5ff;
+            color: #0d1117;
+            border: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn-case:hover {
+            background-color: #00bcd4;
+            color: #0d1117;
+            transform: translateY(-1px);
+        }
+
+        /* FOOTER UNIFORME CON index.html */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00e5ff;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            text-shadow: 0 0 8px rgba(0,229,255,1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Pixel Studio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="menu">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item">
+    <a class="nav-link" href="https://es.squarespace.com/blog/ejemplos-de-webs-de-blogs" target="_blank">Blog <i class="bi bi-box-arrow-up-right small"></i></a>
+</li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <span class="nav-link fw-semibold text-gradient">Soluciones creativas en tecnología</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="portfolio-section">
+        <div class="container">
+            
+            <h1 class="fw-bold display-5 mb-3 text-center">Portafolio</h1>
+            <p class="lead text-center text-secondary-emphasis mb-5">
+                Casos de estudio y proyectos destacados.
+            </p>
+
+            <div class="row g-4 justify-content-center project-card-container">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-sm">
+                        <img src="img/ecomer.jpg" alt="E-commerce Pro" class="card-img-top">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="fw-bold text-light">E-commerce Pro</h6>
+                                <p class="text-secondary small mb-3">Tienda online con diseño adaptable y gestión avanzada.</p>
+                            </div>
+                            <a href="caso-ecommerce.html" target="_blank" class="btn btn-case btn-sm">
+                                Ver Caso <i class="bi bi-arrow-right-short"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-sm">
+                        <img src="img/app.jpg" alt="ReservaApp" class="card-img-top">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="fw-bold text-light">ReservaApp</h6>
+                                <p class="text-secondary small mb-3">Sistema de reservas con sincronización en tiempo real.</p>
+                            </div>
+                            <a href="caso-reservaapp.html" target="_blank" class="btn btn-case btn-sm">
+                                Ver Caso <i class="bi bi-arrow-right-short"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-sm">
+                        <img src="img/dash.jpg" alt="Portal Corporativo" class="card-img-top">
+                        <div class="card-body">
+                            <div>
+                                <h6 class="fw-bold text-light">Portal Corporativo</h6>
+                                <p class="text-secondary small mb-3">Intranet y herramientas internas robustas y funcionales.</p>
+                            </div>
+                            <a href="caso-portal.html" target="_blank" class="btn btn-case btn-sm">
+                                Ver Caso <i class="bi bi-arrow-right-short"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            </div>
+    </section>
+
+    <footer>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <span>© 2025 Pixel Studio</span>
+            <div class="mt-2 mt-md-0">
+                <a href="politica.html">Política</a>
+                <a href="terminos.html">Términos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
