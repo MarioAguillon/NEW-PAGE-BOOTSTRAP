@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Pixel Studio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <style>
+        /* Estilos base uniformes */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d1117;
+            color: #e4e4e4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(90deg, #0d1117, #1e293b);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-brand {
+            color: #00e5ff !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+        }
+
+        .nav-link {
+            color: #f0f0f0 !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #00bcd4 !important;
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+        }
+
+        /* Gradiente */
+        .text-gradient {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Estilo del formulario (fondo más claro para contraste) */
+        .contact-form-card {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Campos de entrada */
+        .form-control,
+        .form-select {
+            background-color: #0d1117;
+            border: 1px solid #334155;
+            color: #f0f0f0;
+            padding: 10px 15px;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background-color: #0d1117;
+            color: #f0f0f0;
+            border-color: #00e5ff;
+            /* Borde neón al enfocar */
+            box-shadow: 0 0 0 0.25rem rgba(0, 229, 255, 0.25);
+        }
+
+        /* Botón de Enviar (Primario - Cian) */
+        .btn-submit {
+            background-color: #00e5ff;
+            color: #0d1117;
+            border: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn-submit:hover {
+            background-color: #00bcd4;
+            color: #0d1117;
+            transform: translateY(-1px);
+        }
+
+        /* Botón Secundario (Limpiar/Volver - Gris oscuro) */
+        .btn-secondary-custom {
+            background-color: #334155;
+            color: #f0f0f0;
+            border: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            border-radius: 6px;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: #475569;
+            color: #f0f0f0;
+        }
+
+
+        /* FOOTER UNIFORME */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00e5ff;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            text-shadow: 0 0 8px rgba(0, 229, 255, 1);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Pixel Studio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="menu">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://es.squarespace.com/blog/ejemplos-de-webs-de-blogs"
+                            target="_blank">Blog <i class="bi bi-box-arrow-up-right small"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <span class="nav-link fw-semibold text-gradient">Soluciones creativas en tecnología</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container py-5 flex-grow-1"> <div class="row justify-content-center">
+            
+            <div class="col-lg-7"> <div class="contact-form-card"> <h1 class="fw-bold display-5 mb-5 text-center" style="color: #00e5ff;">Registro de Usuario</h1>
+                    
+                    <form class="needs-validation" novalidate action="procesar_datos.php" method="POST">
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label text-info">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Mario Aguillon" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa tu nombre completo.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-info">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                            <div class="invalid-feedback">
+                                Por favor, ingresa un correo electrónico válido.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label text-info">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+                            <div class="invalid-feedback">
+                                La contraseña es obligatoria y debe tener al menos 8 caracteres.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edad" class="form-label text-info">Edad</label>
+                            <input type="number" class="form-control" id="edad" name="edad" min="18" required>
+                            <div class="invalid-feedback">
+                                La edad es obligatoria y debes ser mayor de 18 años.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fechaNacimiento" class="form-label text-info">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+                            <div class="invalid-feedback">
+                                Por favor, selecciona tu fecha de nacimiento.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="horaCita" class="form-label text-info">Hora de cita</label>
+                            <input type="time" class="form-control" id="horaCita" name="horaCita" required>
+                            <div class="invalid-feedback">
+                                Por favor, indica la hora de la cita.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="color" class="form-label text-info">Color favorito</label>
+                            <input type="color" class="form-control form-control-color" id="color" name="color" value="#563d7c" required>
+                            <div class="invalid-feedback">
+                                Selecciona un color favorito.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="archivo" class="form-label text-info">Subir archivo</label>
+                            <input type="file" class="form-control" id="archivo" name="archivo" required>
+                            <div class="invalid-feedback">
+                                Debes seleccionar un archivo para subir.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pais" class="form-label text-info">País</label>
+                            <select class="form-select" id="pais" name="pais" required>
+                                <option value="" disabled selected>Selecciona tu país</option>
+                                <option value="colombia">Colombia</option>
+                                <option value="mexico">México</option>
+                                <option value="espana">España</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor, selecciona un país de la lista.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="comentarios" class="form-label text-info">Comentarios</label>
+                            <textarea class="form-control" id="comentarios" name="comentarios" placeholder="Escribe algo..." rows="4" required></textarea>
+                            <div class="invalid-feedback">
+                                El campo de comentarios no puede estar vacío.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="form-label text-info">Género</p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="genero" id="masculino" value="M" required>
+                                <label class="form-check-label" for="masculino">Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="genero" id="femenino" value="F">
+                                <label class="form-check-label" for="femenino">Femenino</label>
+                            </div>
+                            <div class="invalid-feedback">
+                                Por favor, selecciona tu género.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <p class="form-label text-info">Intereses</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="musica" name="intereses[]" value="musica">
+                                <label class="form-check-label" for="musica">Música</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="deporte" name="intereses[]" value="deporte">
+                                <label class="form-check-label" for="deporte">Deporte</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="lectura" name="intereses[]" value="lectura">
+                                <label class="form-check-label" for="lectura">Lectura</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="satisfaccion" class="form-label text-info">Nivel de satisfacción</label>
+                            <input type="range" class="form-range" id="satisfaccion" name="satisfaccion" min="0" max="5">
+                        </div>
+
+                        <div class="form-check form-switch mb-5">
+                            <input class="form-check-input" type="checkbox" role="switch" id="novedades" name="novedades" checked>
+                            <label class="form-check-label" for="novedades">Deseo recibir novedades</label>
+                        </div>
+
+                        <div class="d-flex justify-content-end pt-4">
+                            
+                            <button class="btn btn-secondary-custom me-2" type="reset">Limpiar</button>
+                            
+                            <button class="btn btn-submit" type="submit">Enviar</button>
+                            
+                        </div>
+                    </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div
+            class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <span>© 2025 Pixel Studio</span>
+            <div class="mt-2 mt-md-0">
+                <a href="politica.html">Política</a>
+                <a href="terminos.html">Términos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript para deshabilitar el envío del formulario si hay campos inválidos
+        (() => {
+            'use strict'
+
+            // Busca todos los formularios que tienen la clase 'needs-validation'
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Itera sobre todos los formularios encontrados
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    // Si la validación del formulario falla 
+                    if (!form.checkValidity()) {
+                        event.preventDefault() // Detiene el envío
+                        event.stopPropagation() // Detiene la propagación del evento
+                    }
+
+                    // Añade la clase 'was-validated', que activa los estilos de error/éxito de Bootstrap
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>
